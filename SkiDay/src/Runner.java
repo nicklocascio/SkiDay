@@ -6,5 +6,7 @@ public class Runner
 	public static void main(String[] args) throws IOException
 		{
 		ListFiller.fillArray();
+		Sorter.skiingType();
+		Sorter.sort();
 		}
 	}

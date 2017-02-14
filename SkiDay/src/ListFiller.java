@@ -28,11 +28,8 @@ public class ListFiller
 			int acres = Integer.parseInt(breakdown[5]);
 			int miles = Integer.parseInt(breakdown[6]);
 			String time = breakdown[7];
-			mountains.add(new Mountain(name, park, powder, groomer, price, acres, miles, time));
-			}
-		for(Mountain hi : mountains)
-			{
-			System.out.println(hi.getName());
+			int crowd = Integer.parseInt(breakdown[8]);
+			mountains.add(new Mountain(name, park, powder, groomer, price, acres, miles, time, crowd));
 			}
 		}
 	}

@@ -9,8 +9,9 @@ public class Mountain
 	protected int acres;
 	protected int miles;
 	protected String time;
+	protected int crowd;
 	
-	public Mountain(String n, String par, String pow, String g, int p, int a, int m, String t)
+	public Mountain(String n, String par, String pow, String g, int p, int a, int m, String t, int tour)
 		{
 		name = n;
 		park = par;
@@ -20,6 +21,7 @@ public class Mountain
 		acres = a;
 		miles = m;
 		time = t;
+		crowd = tour;
 		}
 
 	public String getName()
@@ -100,5 +102,15 @@ public class Mountain
 	public void setTime(String time)
 		{
 		this.time = time;
+		}
+
+	public int getCrowd()
+		{
+		return crowd;
+		}
+
+	public void getCrowd(int crowd)
+		{
+		this.crowd = crowd;
 		}
 	}
