@@ -4,6 +4,9 @@ public class TimeSorter implements Comparator<Mountain>
 	{
 	public int compare(Mountain s1, Mountain s2)
 		{
-		return s1.getTime().compareTo(s2.getTime());
+		if(s1.getTime() > s2.getTime())
+			return 1;
+		else
+			return -1;
 		}
 	}

@@ -27,7 +27,7 @@ public class ListFiller
 			int price = Integer.parseInt(breakdown[4]);
 			int acres = Integer.parseInt(breakdown[5]);
 			int miles = Integer.parseInt(breakdown[6]);
-			String time = breakdown[7];
+			int time = Integer.parseInt(breakdown[7].substring(0, 1))*60 + Integer.parseInt(breakdown[7].substring(2, breakdown[7].indexOf("m")));
 			int crowd = Integer.parseInt(breakdown[8]);
 			mountains.add(new Mountain(name, park, powder, groomer, price, acres, miles, time, crowd));
 			}

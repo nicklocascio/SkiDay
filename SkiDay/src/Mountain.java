@@ -8,10 +8,10 @@ public class Mountain
 	protected int price;
 	protected int acres;
 	protected int miles;
-	protected String time;
+	protected int time;
 	protected int crowd;
 	
-	public Mountain(String n, String par, String pow, String g, int p, int a, int m, String t, int tour)
+	public Mountain(String n, String par, String pow, String g, int p, int a, int m, int t, int tour)
 		{
 		name = n;
 		park = par;
@@ -94,12 +94,12 @@ public class Mountain
 		this.miles = miles;
 		}	
 
-	public String getTime()
+	public int getTime()
 		{
 		return time;
 		}
 
-	public void setTime(String time)
+	public void setTime(int time)
 		{
 		this.time = time;
 		}
