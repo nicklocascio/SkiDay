@@ -10,8 +10,14 @@ public class Mountain
 	protected int miles;
 	protected int time;
 	protected int crowd;
+	protected int priceRank;
+	protected int acreRank;
+	protected int mileRank;
+	protected int timeRank;
+	protected int crowdRank;
+	protected double average;
 	
-	public Mountain(String n, String par, String pow, String g, int p, int a, int m, int t, int tour)
+	public Mountain(String n, String par, String pow, String g, int p, int a, int m, int t, int tour, int pr, int ar, int mr, int tr, int cr, double avg)
 		{
 		name = n;
 		park = par;
@@ -22,6 +28,11 @@ public class Mountain
 		miles = m;
 		time = t;
 		crowd = tour;
+		priceRank = pr;
+		acreRank = ar;
+		mileRank = mr;
+		timeRank = tr;
+		average = avg;
 		}
 
 	public String getName()
@@ -109,8 +120,68 @@ public class Mountain
 		return crowd;
 		}
 
-	public void getCrowd(int crowd)
+	public void setCrowd(int crowd)
 		{
 		this.crowd = crowd;
 		}
+
+	public int getPriceRank()
+		{
+		return priceRank;
+		}
+
+	public void setPriceRank(int priceRank)
+		{
+		this.priceRank = priceRank;
+		}
+
+	public int getAcreRank()
+		{
+		return acreRank;
+		}
+
+	public void setAcreRank(int acreRank)
+		{
+		this.acreRank = acreRank;
+		}
+
+	public int getMileRank()
+		{
+		return mileRank;
+		}
+
+	public void setMileRank(int mileRank)
+		{
+		this.mileRank = mileRank;
+		}
+
+	public int getTimeRank()
+		{
+		return timeRank;
+		}
+
+	public void setTimeRank(int timeRank)
+		{
+		this.timeRank = timeRank;
+		}
+
+	public int getCrowdRank()
+		{
+		return crowdRank;
+		}
+
+	public void setCrowdRank(int crowdRank)
+		{
+		this.crowdRank = crowdRank;
+		}
+
+	public double getAverage()
+		{
+		return average;
+		}
+
+	public void setAverage(double average)
+		{
+		this.average = average;
+		}	
 	}
