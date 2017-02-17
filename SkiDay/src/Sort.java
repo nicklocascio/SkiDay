@@ -21,7 +21,7 @@ public class Sort
 				{
 				type = "park";
 				if(ListFiller.mountains.get(i).getPark().equals("y"))
-					{
+					{ 
 					newMountains.add(ListFiller.mountains.get(i));
 					}
 				}
@@ -63,9 +63,9 @@ public class Sort
 			System.out.println("3) Mileage from Denver");
 			System.out.println("4) Time from Denver");
 			System.out.println("5) Crowds");
-			String answer = userInput.nextLine();
+			int answer = userInput.nextInt();
 			System.out.println();
-			if(answer.equals("1"))
+			if(answer == 1)
 				{
 				Collections.sort(newMountains, new PriceSorter());
 				for(Mountain hi : newMountains)
@@ -73,7 +73,7 @@ public class Sort
 					System.out.println(hi.getName() + ": $" + hi.getPrice());
 					} 
 				}
-			if(answer.equals("2"))
+			if(answer == 2)
 				{
 				Collections.sort(newMountains, new AcreSorter());
 				for(Mountain hi : newMountains)
@@ -81,7 +81,7 @@ public class Sort
 					System.out.println(hi.getName() + ": " + hi.getAcres() + " acres");
 					} 
 				}
-			if(answer.equals("3"))
+			if(answer == 3)
 				{
 				Collections.sort(newMountains, new MileSorter());
 				for(Mountain hi : newMountains)
@@ -89,7 +89,7 @@ public class Sort
 					System.out.println(hi.getName() + ": " + hi.getMiles() + " miles from Denver");
 					} 
 				}
-			if(answer.equals("4"))
+			if(answer == 4)
 				{
 				Collections.sort(newMountains, new TimeSorter());
 				for(Mountain hi : newMountains)
@@ -97,13 +97,13 @@ public class Sort
 					System.out.println(hi.getName() + ": " + hi.getTime()/60 + "h" + hi.getTime()%60 + "m from Denver");
 					} 
 				}
-			if(answer.equals("5"))
+			if(answer == 5)
 				{
 				Collections.sort(newMountains, new CrowdSorter());
-				System.out.println("Here are the mountains in order from least crowded to most crowded:");
+				System.out.println("Here are the mountains in order from least crowded to most crowded (1 being the best, 10 being the worst):");
 				for(Mountain hi : newMountains)
 					{
-					System.out.println(hi.getName());
+					System.out.println(hi.getName() + ": " + hi.getCrowd());
 					} 
 				}
 			Scanner userInput2 = new Scanner(System.in);
@@ -114,8 +114,22 @@ public class Sort
 				{
 				more = true;
 				}
-			else
+			else if(answer2.equals("n"))
+				{
 				more = false;
+				System.out.println();
+				Scanner userInput3 = new Scanner(System.in);
+				System.out.println("Ok! What would you like to do then?");
+				System.out.println("1) Return to the main menu");
+				System.out.println("2) Exit");
+				int answer3 = userInput3.nextInt();
+				if(answer3 == 1)
+					{
+					Runner.mainMenu();
+					}
+				else
+					System.out.println();
+				}
 			}
 		}
 	
@@ -189,11 +203,24 @@ public class Sort
 		System.out.println("Here are the top three mountains for you: ");
 		for(int i = 0; i < 3; i++)
 			{
-			System.out.println((i+1) + ") " + newMountains.get(i).getName() + ". A lift ticket is $" + newMountains.get(i).getPrice() + ". The mountain is " + newMountains.get(i).getAcres() + " acres large. It is " + newMountains.get(i).getMiles() + " miles away from Denver, which as approximately " + newMountains.get(i).getTimeR() + ". It has been rated a " + newMountains.get(i).getCrowd() + " on a scale from 1-10 (1 being the best, 10 being the worst) concerning the crowds.");
+			System.out.println((i+1) + ") " + newMountains.get(i).getName() + ": A lift ticket is $" + newMountains.get(i).getPrice() + ". The mountain is " + newMountains.get(i).getAcres() + " acres large. It is " + newMountains.get(i).getMiles() + " miles away from Denver, which as approximately " + newMountains.get(i).getTimeR() + ". It has been rated a " + newMountains.get(i).getCrowd() + " on a scale from 1-10 (1 being the best, 10 being the worst) concerning the crowds.");
 			}
-//		for(Mountain hi : newMountains)
-//			{
-//			System.out.println(hi.getName() + hi.getAverage());	
-//			}
+		System.out.println();
+		Scanner userInput = new Scanner(System.in);
+		System.out.println("What would you like to do next?");
+		System.out.println("1) Return to the main menu");
+		System.out.println("2) Try the ideal mountain function again");
+		System.out.println("3) Exit");
+		int answer = userInput.nextInt();
+		if(answer == 1)
+			{
+			Runner.mainMenu();
+			}
+		else if(answer == 2)
+			{
+			idealDay();
+			}
+		else
+			System.out.println();
 		}
 	}
