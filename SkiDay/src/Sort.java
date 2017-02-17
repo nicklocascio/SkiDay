@@ -153,6 +153,7 @@ public class Sort
 			}
 		//RN IT PRINTS IN CROWD ORDER BC THAT WAS THE LAST SORT
 		System.out.println("You will be asked to rank a number of different criteria in their importance to you on a scale of 1-10");
+		System.out.println();
 		//Price
 		Scanner user = new Scanner(System.in);
 		System.out.println("1) Affordability");
@@ -173,7 +174,7 @@ public class Sort
 		Scanner user5 = new Scanner(System.in);
 		System.out.println("5) Crowds");
 		double crowdI = user5.nextInt();
-		//
+		//Average
 		for(int i = 0; i < newMountains.size(); i++)
 			{
 			double tot = newMountains.get(i).getPriceRank()*priceI;
@@ -183,11 +184,16 @@ public class Sort
 			double tot5 = newMountains.get(i).getCrowdRank()*crowdI;
 			double average = (tot+tot2+tot3+tot4+tot5)/5;
 			newMountains.get(i).setAverage(average);
-			System.out.println(average + newMountains.get(i).getName());
+			}
+		Collections.sort(newMountains, new AverageSorter());
+		System.out.println("Here are the top three mountains for you: ");
+		for(int i = 0; i < 3; i++)
+			{
+			System.out.println((i+1) + ") " + newMountains.get(i).getName() + ". A lift ticket is $" + newMountains.get(i).getPrice() + ". The mountain is " + newMountains.get(i).getAcres() + " acres large. It is " + newMountains.get(i).getMiles() + " miles away from Denver, which as approximately " + newMountains.get(i).getTimeR() + ". It has been rated a " + newMountains.get(i).getCrowd() + " on a scale from 1-10 (1 being the best, 10 being the worst) concerning the crowds.");
 			}
 //		for(Mountain hi : newMountains)
 //			{
-//			System.out.println(hi.getName() + hi.getPriceRank() + hi.getAcreRank() + hi.getMileRank());	
+//			System.out.println(hi.getName() + hi.getAverage());	
 //			}
 		}
 	}

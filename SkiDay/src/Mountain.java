@@ -9,6 +9,7 @@ public class Mountain
 	protected int acres;
 	protected int miles;
 	protected int time;
+	protected String timeR;
 	protected int crowd;
 	protected int priceRank;
 	protected int acreRank;
@@ -17,7 +18,7 @@ public class Mountain
 	protected int crowdRank;
 	protected double average;
 	
-	public Mountain(String n, String par, String pow, String g, int p, int a, int m, int t, int tour, int pr, int ar, int mr, int tr, int cr, double avg)
+	public Mountain(String n, String par, String pow, String g, int p, int a, int m, int t, String tR, int tour, int pr, int ar, int mr, int tr, int cr, double avg)
 		{
 		name = n;
 		park = par;
@@ -27,6 +28,7 @@ public class Mountain
 		acres = a;
 		miles = m;
 		time = t;
+		timeR = tR;
 		crowd = tour;
 		priceRank = pr;
 		acreRank = ar;
@@ -114,6 +116,16 @@ public class Mountain
 		{
 		this.time = time;
 		}
+
+	public String getTimeR()
+	{
+		return timeR;
+	}
+
+	public void setTimeR(String timeR)
+	{
+		this.timeR = timeR;
+	}
 
 	public int getCrowd()
 		{
