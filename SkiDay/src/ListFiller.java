@@ -5,16 +5,27 @@ public class ListFiller
 	{
 	static Scanner file;
 	static ArrayList <Mountain> mountains = new ArrayList <Mountain>();
+	static String city;
+	static String state2;
 	
 	public static void fillArray() throws IOException
 		{
 		Scanner userInput = new Scanner(System.in);
 		System.out.println("What state are you looking to ski in this weekend?");
 		System.out.println("1) Colorado");
+		System.out.println("2) Utah");
 		String state = userInput.nextLine();
 		if(state.equals("1"))
 			{
+			city = "Denver";
+			state2 = "Colorado";
 			file = new Scanner(new File("ColoradoResorts.txt"));	
+			}
+		if(state.equals("2"))
+			{
+			city = "Salt Lake City";
+			state2 = "Utah";
+			file = new Scanner(new File("UtahResorts.txt"));	
 			}
 		while(file.hasNext())
 			{

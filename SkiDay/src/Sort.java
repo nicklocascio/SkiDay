@@ -43,7 +43,7 @@ public class Sort
 				}
 			}
 		System.out.println();
-		System.out.println("The best " + type + " mountains in Colorado are: ");
+		System.out.println("The best " + type + " mountains in " + ListFiller.state2 + " are: ");
 		for(Mountain hi : newMountains)
 			{
 			System.out.println(hi.getName());
@@ -60,8 +60,8 @@ public class Sort
 			System.out.println("What would you like to sort by?");
 			System.out.println("1) Price");
 			System.out.println("2) Acreage");
-			System.out.println("3) Mileage from Denver");
-			System.out.println("4) Time from Denver");
+			System.out.println("3) Mileage from " + ListFiller.city);
+			System.out.println("4) Time from " + ListFiller.city);
 			System.out.println("5) Crowds");
 			int answer = userInput.nextInt();
 			System.out.println();
@@ -86,7 +86,7 @@ public class Sort
 				Collections.sort(newMountains, new MileSorter());
 				for(Mountain hi : newMountains)
 					{
-					System.out.println(hi.getName() + ": " + hi.getMiles() + " miles from Denver");
+					System.out.println(hi.getName() + ": " + hi.getMiles() + " miles");
 					} 
 				}
 			if(answer == 4)
@@ -94,7 +94,7 @@ public class Sort
 				Collections.sort(newMountains, new TimeSorter());
 				for(Mountain hi : newMountains)
 					{
-					System.out.println(hi.getName() + ": " + hi.getTime()/60 + "h" + hi.getTime()%60 + "m from Denver");
+					System.out.println(hi.getName() + ": " + hi.getTime()/60 + "h" + hi.getTime()%60 + "m");
 					} 
 				}
 			if(answer == 5)
@@ -178,11 +178,11 @@ public class Sort
 		double acreI = user2.nextInt();
 		//Mile
 		Scanner user3 = new Scanner(System.in);
-		System.out.println("3) Mileage from Denver");
+		System.out.println("3) Mileage from " + ListFiller.city);
 		double mileI = user3.nextInt();
 		//Time
 		Scanner user4 = new Scanner(System.in);
-		System.out.println("4) Time from Denver");
+		System.out.println("4) Time from " + ListFiller.city);
 		double timeI = user4.nextInt();
 		//Crowd
 		Scanner user5 = new Scanner(System.in);
@@ -200,10 +200,10 @@ public class Sort
 			newMountains.get(i).setAverage(average);
 			}
 		Collections.sort(newMountains, new AverageSorter());
-		System.out.println("Here are the top three mountains for you: ");
+		System.out.println("Here are the top mountains for you: ");
 		for(int i = 0; i < 3; i++)
 			{
-			System.out.println((i+1) + ") " + newMountains.get(i).getName() + ": A lift ticket is $" + newMountains.get(i).getPrice() + ". The mountain is " + newMountains.get(i).getAcres() + " acres large. It is " + newMountains.get(i).getMiles() + " miles away from Denver, which as approximately " + newMountains.get(i).getTimeR() + ". It has been rated a " + newMountains.get(i).getCrowd() + " on a scale from 1-10 (1 being the best, 10 being the worst) concerning the crowds.");
+			System.out.println((i+1) + ") " + newMountains.get(i).getName() + ": A lift ticket is $" + newMountains.get(i).getPrice() + ". The mountain is " + newMountains.get(i).getAcres() + " acres large. It is " + newMountains.get(i).getMiles() + " miles away from " + ListFiller.city + ", which as approximately " + newMountains.get(i).getTimeR() + ". It has been rated a " + newMountains.get(i).getCrowd() + " on a scale from 1-10 (1 being the best, 10 being the worst) concerning the crowds.");
 			}
 		System.out.println();
 		Scanner userInput = new Scanner(System.in);

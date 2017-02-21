@@ -1,0 +1,12 @@
+Alta Ski Area, n, y, n, 96, 2200, 49, 1h33m, 2
+Beaver Mountain, n, n, y, 48, 664, 113, 2h4m, 3
+Brian Head Resort, y, n, y, 59, 665, 245, 3h35m, 3
+Brighton Resort, y, y, n, 79, 1050, 29, 0h41m, 8
+Deer Valley Resort, n, y, y, 128, 2026, 32, 0h42m, 5
+Eagle Point, n, y, n, 55, 650, 218, 3h19m, 3
+Park City, y, n, y, 134, 7300, 32, 0h39m, 10
+Powder Mountain, n, y, n, 79, 2800, 55, 1h18m, 4
+Snowbasin, y, y, n, 99, 3000, 44, 0h56m, 4
+Snowbird, n, y, n, 106, 2500, 25, 0h36m, 5
+Solitude Mountain Resort, n, y, y, 83, 1200, 27, 0h38m, 3
+Sundance, n, y, n, 70, 450, 50, 0h55m, 4
