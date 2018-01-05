@@ -1,27 +1,47 @@
 import java.util.*;
+import javax.swing.*;
+
 import java.io.*;
 
-public class ListFiller
+public class ListFiller 
 	{
 	static Scanner file;
 	static ArrayList <Mountain> mountains = new ArrayList <Mountain>();
 	static String city;
 	static String state2;
+	static JFrame frame = new JFrame();
 	
 	public static void fillArray() throws IOException
 		{
-		Scanner userInput = new Scanner(System.in);
-		System.out.println("What state are you looking to ski in this weekend?");
-		System.out.println("1) Colorado");
-		System.out.println("2) Utah");
-		String state = userInput.nextLine();
-		if(state.equals("1"))
+		String hi = "Ok";
+		ImageIcon image = new ImageIcon("mountains.jpg");
+		JOptionPane.showMessageDialog(
+				null, 
+				"Welcome to the Ski App!",
+				hi,
+				JOptionPane.QUESTION_MESSAGE,
+				image
+				);
+		
+		Object[] states = {"Colorado", "Utah"};
+		int state = JOptionPane.showOptionDialog(
+				null, 
+				"What state are you looking to ski in this weekend?",
+				"State Selection",
+				JOptionPane.DEFAULT_OPTION,
+				JOptionPane.QUESTION_MESSAGE,
+				null,
+				states,
+				states[0]
+				);
+		
+		if(state == 0)
 			{
 			city = "Denver";
 			state2 = "Colorado";
 			file = new Scanner(new File("ColoradoResorts.txt"));	
 			}
-		if(state.equals("2"))
+		if(state == 1)
 			{
 			city = "Salt Lake City";
 			state2 = "Utah";

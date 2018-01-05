@@ -1,6 +1,9 @@
 //Narrows Down List Based on Skiing Preference
 
 import java.util.*;
+
+import javax.swing.JOptionPane;
+
 import java.io.*;
 
 public class SkiPreferenceSort 
@@ -9,17 +12,21 @@ public class SkiPreferenceSort
 
 	public static void skiingType()
 		{
-		Scanner userInput = new Scanner(System.in);
-		System.out.println();
-		System.out.println("What type of skiing would you like to do?");
-		System.out.println("1) Park");
-		System.out.println("2) Powder");
-		System.out.println("3) Groomers");
-		String answer = userInput.nextLine();
+		Object[] skiingTypes = {"Park", "Powder", "Groomers"};
+		int answer = JOptionPane.showOptionDialog(
+				null, 
+				"What type of skiing would you like to do?",
+				"Ski Type",
+				JOptionPane.DEFAULT_OPTION,
+				JOptionPane.QUESTION_MESSAGE,
+				null,
+				skiingTypes,
+				skiingTypes[0]
+				);
 		String type = "";
 		for(int i = 0; i < ListFiller.mountains.size(); i++)
 			{
-			if(answer.equals("1"))
+			if(answer == 0)
 				{
 				type = "park";
 				if(ListFiller.mountains.get(i).getPark().equals("y"))
@@ -27,7 +34,7 @@ public class SkiPreferenceSort
 					newMountains.add(ListFiller.mountains.get(i));
 					}
 				}
-			else if(answer.equals("2"))
+			else if(answer == 1)
 				{
 				type = "powder";
 				if(ListFiller.mountains.get(i).getPowder().equals("y"))
@@ -35,7 +42,7 @@ public class SkiPreferenceSort
 					newMountains.add(ListFiller.mountains.get(i));
 					}
 				}
-			else if(answer.equals("3"))
+			else if(answer == 2)
 				{
 				type = "groomer";
 				if(ListFiller.mountains.get(i).getGroomer().equals("y"))

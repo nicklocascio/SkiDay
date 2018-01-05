@@ -1,7 +1,7 @@
 import java.util.Collections;
 import java.util.Scanner;
 
-public class IndividualLists extends SkiPreferenceSort
+public class IndividualLists
 	{
 	public static void individualLists()
 		{
@@ -20,41 +20,41 @@ public class IndividualLists extends SkiPreferenceSort
 			System.out.println();
 			if(answer == 1)
 				{
-				Collections.sort(newMountains, new PriceSorter());
-				for(Mountain hi : newMountains)
+				Collections.sort(SkiPreferenceSort.newMountains, new PriceSorter());
+				for(Mountain hi : SkiPreferenceSort.newMountains)
 					{
 					System.out.println(hi.getName() + ": $" + hi.getPrice());
 					} 
 				}
 			if(answer == 2)
 				{
-				Collections.sort(newMountains, new AcreSorter());
-				for(Mountain hi : newMountains)
+				Collections.sort(SkiPreferenceSort.newMountains, new AcreSorter());
+				for(Mountain hi : SkiPreferenceSort.newMountains)
 					{
 					System.out.println(hi.getName() + ": " + hi.getAcres() + " acres");
 					} 
 				}
 			if(answer == 3)
 				{
-				Collections.sort(newMountains, new MileSorter());
-				for(Mountain hi : newMountains)
+				Collections.sort(SkiPreferenceSort.newMountains, new MileSorter());
+				for(Mountain hi : SkiPreferenceSort.newMountains)
 					{
 					System.out.println(hi.getName() + ": " + hi.getMiles() + " miles");
 					} 
 				}
 			if(answer == 4)
 				{
-				Collections.sort(newMountains, new TimeSorter());
-				for(Mountain hi : newMountains)
+				Collections.sort(SkiPreferenceSort.newMountains, new TimeSorter());
+				for(Mountain hi : SkiPreferenceSort.newMountains)
 					{
 					System.out.println(hi.getName() + ": " + hi.getTime()/60 + "h" + hi.getTime()%60 + "m");
 					} 
 				}
 			if(answer == 5)
 				{
-				Collections.sort(newMountains, new CrowdSorter());
+				Collections.sort(SkiPreferenceSort.newMountains, new CrowdSorter());
 				System.out.println("Here are the mountains in order from least crowded to most crowded (1 being the best, 10 being the worst):");
-				for(Mountain hi : newMountains)
+				for(Mountain hi : SkiPreferenceSort.newMountains)
 					{
 					System.out.println(hi.getName() + ": " + hi.getCrowd());
 					} 
