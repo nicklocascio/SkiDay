@@ -1,3 +1,5 @@
+//Sorts by Acres
+
 import java.util.Comparator;
 
 public class AcreSorter implements Comparator<Mountain>

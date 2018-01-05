@@ -2,7 +2,15 @@ import java.io.*;
 import java.util.*;
 
 public class Runner
-	{
+	{	
+	public static void main(String[] args) throws IOException
+		{
+		ListFiller.fillArray();
+		SkiPreferenceSort.skiingType();
+		mainMenu();
+		System.out.println("Sounds good! Have fun out there and be safe!");
+		}
+	
 	public static void mainMenu()
 		{
 		System.out.println();
@@ -13,19 +21,11 @@ public class Runner
 		int answer = userInput.nextInt();
 		if(answer == 1)
 			{
-			Sort.sort();
+			IndividualLists.individualLists();
 			}
 		else if(answer == 2)
 			{
-			Sort.idealDay();
+			IdealDay.idealDay();
 			}	
-		}
-		
-	public static void main(String[] args) throws IOException
-		{
-		ListFiller.fillArray();
-		Sort.skiingType();
-		mainMenu();
-		System.out.println("Sounds good! Have fun out there and be safe!");
 		}
 	}

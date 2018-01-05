@@ -1,3 +1,5 @@
+//Sorts by Mileage from Denver
+
 import java.util.Comparator;
 
 public class MileSorter implements Comparator<Mountain>

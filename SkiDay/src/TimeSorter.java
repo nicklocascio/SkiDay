@@ -1,3 +1,5 @@
+//Sorts by Time from Denver
+
 import java.util.Comparator;
 
 public class TimeSorter implements Comparator<Mountain>

@@ -1,3 +1,5 @@
+//Sorts by Lift Ticket Price
+
 import java.util.Comparator;
 
 public class PriceSorter implements Comparator<Mountain>

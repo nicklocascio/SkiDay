@@ -1,5 +1,5 @@
 Vail, y, y, y, 151, 5289, 97, 1h42m, 10
-Arapahoe Basin, n, y, y, 73, 960, 64, 1h9m, 5
+Arapahoe Basin, n, y, n, 73, 960, 64, 1h9m, 5
 Sunlight, n, y, n, 60, 470, 169, 2h59m, 2
 Aspen Mountain, n, y, y, 139, 673, 198, 3h28m, 8
 Beaver Creek, n, y, y, 151, 1825, 106, 1h50m, 7
@@ -11,14 +11,13 @@ Monarch Mountain, n, y, n, 74, 800, 157, 2h58m, 2
 Copper Mountain, y, y, y, 139, 2490, 77, 1h17m, 5
 Crested Butte, n, y, n, 111, 1125, 228, 4h8m, 6
 Wolf Creek, n, y, n, 65, 1600, 253, 4h25m, 1
-Echo Mountain, n, n, y, 49, 75, 36, 0h52m, 2
 Keystone, y, n, y, 102, 3087, 69, 1h16m, 7
 Loveland, n, y, n, 65, 1800, 57, 0h59m, 5
 Powderhorn, n, n, y, 69, 1600, 232, 3h48m, 3
-Aspen Highlands, n, y, y, 139, 1010, 198, 3h28m, 8
+Aspen Highlands, n, y, n, 139, 1010, 198, 3h28m, 8
 Purgatory, n, n, y, 85, 1525, 364, 6h31m, 3
 Snowmass, y, y, y, 139, 3128, 198, 3h28m, 8
 Ski Cooper, n, n, y, 50, 400, 108, 1h56m, 2
-Telluride, y, y, y, 122, 2000, 364, 6h5m, 5
-Breckenridge, y, y, n, 141, 2926, 79, 1h22m, 9
+Telluride, y, y, n, 122, 2000, 364, 6h5m, 5
+Breckenridge, y, y, y, 141, 2926, 79, 1h22m, 9
 Winter Park, y, y, y, 113, 3081, 66, 1h13m, 8
