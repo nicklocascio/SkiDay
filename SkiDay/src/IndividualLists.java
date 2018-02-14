@@ -1,5 +1,6 @@
 import java.util.Collections;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class IndividualLists
 	{
@@ -8,17 +9,19 @@ public class IndividualLists
 		boolean more = true;
 		while(more)
 			{
-			Scanner userInput = new Scanner(System.in);
-			System.out.println();
-			System.out.println("What would you like to sort by?");
-			System.out.println("1) Price");
-			System.out.println("2) Acreage");
-			System.out.println("3) Mileage from " + ListFiller.city);
-			System.out.println("4) Time from " + ListFiller.city);
-			System.out.println("5) Crowds");
-			int answer = userInput.nextInt();
-			System.out.println();
-			if(answer == 1)
+			Object [] sortChoices = {"Price", "Acreage", "Distance from " + ListFiller.city, "Crowds"};
+			int answer = JOptionPane.showOptionDialog(
+					null, 
+					"What would you like to sort by?",
+					"Sort Choice",
+					JOptionPane.DEFAULT_OPTION,
+					JOptionPane.QUESTION_MESSAGE,
+					null,
+					sortChoices,
+					sortChoices[0]
+					);
+			
+			if(answer == 0)
 				{
 				Collections.sort(SkiPreferenceSort.newMountains, new PriceSorter());
 				for(Mountain hi : SkiPreferenceSort.newMountains)
@@ -26,7 +29,7 @@ public class IndividualLists
 					System.out.println(hi.getName() + ": $" + hi.getPrice());
 					} 
 				}
-			if(answer == 2)
+			if(answer == 1)
 				{
 				Collections.sort(SkiPreferenceSort.newMountains, new AcreSorter());
 				for(Mountain hi : SkiPreferenceSort.newMountains)
@@ -34,7 +37,7 @@ public class IndividualLists
 					System.out.println(hi.getName() + ": " + hi.getAcres() + " acres");
 					} 
 				}
-			if(answer == 3)
+			if(answer == 2)
 				{
 				Collections.sort(SkiPreferenceSort.newMountains, new MileSorter());
 				for(Mountain hi : SkiPreferenceSort.newMountains)
@@ -42,15 +45,15 @@ public class IndividualLists
 					System.out.println(hi.getName() + ": " + hi.getMiles() + " miles");
 					} 
 				}
-			if(answer == 4)
-				{
-				Collections.sort(SkiPreferenceSort.newMountains, new TimeSorter());
-				for(Mountain hi : SkiPreferenceSort.newMountains)
-					{
-					System.out.println(hi.getName() + ": " + hi.getTime()/60 + "h" + hi.getTime()%60 + "m");
-					} 
-				}
-			if(answer == 5)
+//			if(answer == 4)
+//				{
+//				Collections.sort(SkiPreferenceSort.newMountains, new TimeSorter());
+//				for(Mountain hi : SkiPreferenceSort.newMountains)
+//					{
+//					System.out.println(hi.getName() + ": " + hi.getTime()/60 + "h" + hi.getTime()%60 + "m");
+//					} 
+//				}
+			if(answer == 3)
 				{
 				Collections.sort(SkiPreferenceSort.newMountains, new CrowdSorter());
 				System.out.println("Here are the mountains in order from least crowded to most crowded (1 being the best, 10 being the worst):");
@@ -59,6 +62,7 @@ public class IndividualLists
 					System.out.println(hi.getName() + ": " + hi.getCrowd());
 					} 
 				}
+			
 			Scanner userInput2 = new Scanner(System.in);
 			System.out.println();
 			System.out.println("Would you like to see another sort? (y or n)");

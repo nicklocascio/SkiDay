@@ -7,37 +7,38 @@ public class IdealDay
 	
 	public static void idealDay()
 		{
-		//Price
+		//Price sorting
 		Collections.sort(SkiPreferenceSort.newMountains, new PriceSorter());
 		for(int i = 0; i < SkiPreferenceSort.newMountains.size(); i++)
 			{
 			SkiPreferenceSort.newMountains.get(i).setPriceRank(i+1);	
 			}
-		//Acre
+		//Acre sorting
 		Collections.sort(SkiPreferenceSort.newMountains, new AcreSorter());
 		for(int i = 0; i < SkiPreferenceSort.newMountains.size(); i++)
 			{
 			SkiPreferenceSort.newMountains.get(i).setAcreRank(i+1);	
 			}
-		//Mile
+		//Mile sorting
 		Collections.sort(SkiPreferenceSort.newMountains, new MileSorter());
 		for(int i = 0; i < SkiPreferenceSort.newMountains.size(); i++)
 			{
 			SkiPreferenceSort.newMountains.get(i).setMileRank(i+1);	
 			}
-		//Time
+		//Time sorting
 		Collections.sort(SkiPreferenceSort.newMountains, new TimeSorter());
 		for(int i = 0; i < SkiPreferenceSort.newMountains.size(); i++)
 			{
 			SkiPreferenceSort.newMountains.get(i).setTimeRank(i+1);	
 			}
-		//Crowd
+		//Crowd sorting
 		Collections.sort(SkiPreferenceSort.newMountains, new CrowdSorter());
 		for(int i = 0; i < SkiPreferenceSort.newMountains.size(); i++)
 			{
 			SkiPreferenceSort.newMountains.get(i).setCrowdRank(i+1);	
 			}
 		//RN IT PRINTS IN CROWD ORDER BC THAT WAS THE LAST SORT
+		
 		System.out.println("You will be asked to rank a number of different criteria in their importance to you on a scale of 1-10");
 		System.out.println();
 		//Price

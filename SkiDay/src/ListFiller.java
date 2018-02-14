@@ -1,6 +1,5 @@
 import java.util.*;
 import javax.swing.*;
-
 import java.io.*;
 
 public class ListFiller 
@@ -13,13 +12,12 @@ public class ListFiller
 	
 	public static void fillArray() throws IOException
 		{
-		String hi = "Ok";
 		ImageIcon image = new ImageIcon("mountains.jpg");
 		JOptionPane.showMessageDialog(
 				null, 
 				"Welcome to the Ski App!",
-				hi,
-				JOptionPane.QUESTION_MESSAGE,
+				"Welcome",
+				JOptionPane.CLOSED_OPTION,
 				image
 				);
 		

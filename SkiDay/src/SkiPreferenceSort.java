@@ -1,15 +1,25 @@
 //Narrows Down List Based on Skiing Preference
 
 import java.util.*;
-
-import javax.swing.JOptionPane;
-
+import javax.swing.*;
 import java.io.*;
 
 public class SkiPreferenceSort 
 	{
 	static ArrayList <Mountain> newMountains = new ArrayList<Mountain>();
 
+	public static void delay()
+		{
+		try
+			{
+			Thread.sleep(2000);
+			} 
+		catch (InterruptedException e)
+			{
+			e.printStackTrace();
+			}
+		}
+	
 	public static void skiingType()
 		{
 		Object[] skiingTypes = {"Park", "Powder", "Groomers"};
@@ -23,6 +33,7 @@ public class SkiPreferenceSort
 				skiingTypes,
 				skiingTypes[0]
 				);
+		
 		String type = "";
 		for(int i = 0; i < ListFiller.mountains.size(); i++)
 			{
@@ -51,11 +62,14 @@ public class SkiPreferenceSort
 					}
 				}
 			}
-		System.out.println();
-		System.out.println("The best " + type + " mountains in " + ListFiller.state2 + " are: ");
-		for(Mountain hi : newMountains)
-			{
-			System.out.println(hi.getName());
-			}
+		
+		JFrame f = new JFrame("The best " + type + " mountains in " + ListFiller.state2);
+		f.add(new JList(ConvertToArray.convert(newMountains)));
+		f.setSize(500, 300);
+		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		f.setLocationRelativeTo(null);
+		f.setVisible(true);
+		
+		delay();
 		}
 	}
