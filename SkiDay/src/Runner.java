@@ -13,6 +13,18 @@ public class Runner
 		System.out.println("Sounds good! Have fun out there and be safe!");
 		}
 	
+	public static void delay()
+		{
+		try
+			{
+			Thread.sleep(2000);
+			} 
+		catch (InterruptedException e)
+			{
+			e.printStackTrace();
+			}
+		}
+	
 	public static void mainMenu()
 		{
 		Object[] options = {"See individual sorted lists of mountain statistics", "Find your ideal mountain"};

@@ -1,6 +1,12 @@
 import java.util.Collections;
 import java.util.Scanner;
+
+import javax.swing.JFrame;
+import javax.swing.JList;
 import javax.swing.JOptionPane;
+
+//Time Conversion:
+//hi.getTime()/60 + "h" + hi.getTime()%60 + "m"
 
 public class IndividualLists
 	{
@@ -21,48 +27,39 @@ public class IndividualLists
 					sortChoices[0]
 					);
 			
+			String [] sorted = new String[SkiPreferenceSort.newMountains.size()];
+			
 			if(answer == 0)
 				{
 				Collections.sort(SkiPreferenceSort.newMountains, new PriceSorter());
-				for(Mountain hi : SkiPreferenceSort.newMountains)
-					{
-					System.out.println(hi.getName() + ": $" + hi.getPrice());
-					} 
+				sorted = ConvertToArray.convert(SkiPreferenceSort.newMountains, 1);
 				}
-			if(answer == 1)
+			else if(answer == 1)
 				{
 				Collections.sort(SkiPreferenceSort.newMountains, new AcreSorter());
-				for(Mountain hi : SkiPreferenceSort.newMountains)
-					{
-					System.out.println(hi.getName() + ": " + hi.getAcres() + " acres");
-					} 
+				sorted = ConvertToArray.convert(SkiPreferenceSort.newMountains, 2);
 				}
-			if(answer == 2)
+			else if(answer == 2)
 				{
 				Collections.sort(SkiPreferenceSort.newMountains, new MileSorter());
-				for(Mountain hi : SkiPreferenceSort.newMountains)
-					{
-					System.out.println(hi.getName() + ": " + hi.getMiles() + " miles");
-					} 
+				sorted = ConvertToArray.convert(SkiPreferenceSort.newMountains, 3);
 				}
-//			if(answer == 4)
-//				{
-//				Collections.sort(SkiPreferenceSort.newMountains, new TimeSorter());
-//				for(Mountain hi : SkiPreferenceSort.newMountains)
-//					{
-//					System.out.println(hi.getName() + ": " + hi.getTime()/60 + "h" + hi.getTime()%60 + "m");
-//					} 
-//				}
-			if(answer == 3)
+			else
 				{
 				Collections.sort(SkiPreferenceSort.newMountains, new CrowdSorter());
-				System.out.println("Here are the mountains in order from least crowded to most crowded (1 being the best, 10 being the worst):");
-				for(Mountain hi : SkiPreferenceSort.newMountains)
-					{
-					System.out.println(hi.getName() + ": " + hi.getCrowd());
-					} 
+				sorted = ConvertToArray.convert(SkiPreferenceSort.newMountains, 4);
 				}
 			
+			JFrame f = new JFrame("Hey");
+			f.add(new JList(sorted));
+			f.setSize(500, 300);
+			f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			f.setLocationRelativeTo(null);
+			f.setVisible(true);
+			Runner.delay();
+			f.setVisible(false);
+			
+			//Convert This Next
 			Scanner userInput2 = new Scanner(System.in);
 			System.out.println();
 			System.out.println("Would you like to see another sort? (y or n)");

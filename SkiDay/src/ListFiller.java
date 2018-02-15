@@ -15,7 +15,7 @@ public class ListFiller
 		ImageIcon image = new ImageIcon("mountains.jpg");
 		JOptionPane.showMessageDialog(
 				null, 
-				"Welcome to the Ski App!",
+				"Welcome to [insert name here]!",
 				"Welcome",
 				JOptionPane.CLOSED_OPTION,
 				image
