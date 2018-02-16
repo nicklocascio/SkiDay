@@ -1,7 +1,6 @@
 import java.io.*;
 import java.util.*;
-
-import javax.swing.JOptionPane;
+import javax.swing.*;
 
 public class Runner
 	{	
@@ -10,7 +9,12 @@ public class Runner
 		ListFiller.fillArray();
 		SkiPreferenceSort.skiingType();
 		mainMenu();
-		System.out.println("Sounds good! Have fun out there and be safe!");
+		JLabel label = new JLabel("Farewell");
+		label.setText("Sounds good! Have fun out there and be safe!");
+		label.setVisible(true);
+		delay();
+		label.setVisible(false);
+//		System.out.println("Sounds good! Have fun out there and be safe!");
 		}
 	
 	public static void delay()
@@ -27,7 +31,7 @@ public class Runner
 	
 	public static void mainMenu()
 		{
-		Object[] options = {"See individual sorted lists of mountain statistics", "Find your ideal mountain"};
+		Object[] options = {"See individual sorted lists of mountain statistics", "Find your ideal mountain", "View mountain trail maps"};
 		int answer = JOptionPane.showOptionDialog(
 				null, 
 				"What would you like to do?",
@@ -47,5 +51,9 @@ public class Runner
 			{
 			IdealDay.idealDay();
 			}	
+		else
+			{
+			TrailMaps.trailMap();
+			}
 		}
 	}
