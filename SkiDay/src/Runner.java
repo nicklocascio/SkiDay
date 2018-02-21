@@ -53,7 +53,7 @@ public class Runner
 			}	
 		else
 			{
-			TrailMaps.trailMap();
+			List.trailMap();
 			}
 		}
 	}
