@@ -2,6 +2,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
 
+import javax.swing.JOptionPane;
+
 public class IdealDay
 	{
 	
@@ -39,28 +41,78 @@ public class IdealDay
 			}
 		//RN IT PRINTS IN CROWD ORDER BC THAT WAS THE LAST SORT
 		
-		System.out.println("You will be asked to rank a number of different criteria in their importance to you on a scale of 1-10");
-		System.out.println();
+		JOptionPane.showMessageDialog(
+				null, 
+				"You will be asked to rank a number of different criteria in their importance to you on a scale of 1-10",
+				"Ideal Day",
+				JOptionPane.CLOSED_OPTION,
+				null
+				);
+		
+		String [] sorts = {"Affordability", "Acreage of the resort", "Mileage from " + ListFiller.city, "Time from " + ListFiller.city, "Crowds"};
+		Object [] numbers = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
+		
+		double priceI = 0;
+		double acreI = 0;
+		double mileI = 0;
+		double timeI = 0;
+		double crowdI = 0;
+		
+		for(int i = 0; i < 5; i++)
+			{
+			int answer = JOptionPane.showOptionDialog(
+					null, 
+					sorts[i],
+					"Ideal Day",
+					JOptionPane.DEFAULT_OPTION,
+					JOptionPane.QUESTION_MESSAGE,
+					null,
+					numbers,
+					numbers[0]
+					);
+			if(i == 0)
+				{
+				priceI = answer;
+				}
+			else if(i == 1)
+				{
+				acreI = answer;
+				}
+			else if(i == 2)
+				{
+				mileI = answer;
+				}
+			else if(i == 3)
+				{
+				timeI = answer;
+				}
+			else
+				{
+				crowdI = answer;
+				}
+			}
+		
 		//Price
-		Scanner user = new Scanner(System.in);
-		System.out.println("1) Affordability");
-		double priceI = user.nextInt();
+//		Scanner user = new Scanner(System.in);
+//		System.out.println("1) Affordability");
+//		double priceI = user.nextInt();
 		//Acre
-		Scanner user2 = new Scanner(System.in);
-		System.out.println("2) Acreage of the resort");
-		double acreI = user2.nextInt();
+//		Scanner user2 = new Scanner(System.in);
+//		System.out.println("2) Acreage of the resort");
+//		double acreI = user2.nextInt();
 		//Mile
-		Scanner user3 = new Scanner(System.in);
-		System.out.println("3) Mileage from " + ListFiller.city);
-		double mileI = user3.nextInt();
+//		Scanner user3 = new Scanner(System.in);
+//		System.out.println("3) Mileage from " + ListFiller.city);
+//		double mileI = user3.nextInt();
 		//Time
-		Scanner user4 = new Scanner(System.in);
-		System.out.println("4) Time from " + ListFiller.city);
-		double timeI = user4.nextInt();
+//		Scanner user4 = new Scanner(System.in);
+//		System.out.println("4) Time from " + ListFiller.city);
+//		double timeI = user4.nextInt();
 		//Crowd
-		Scanner user5 = new Scanner(System.in);
-		System.out.println("5) Crowds");
-		double crowdI = user5.nextInt();
+//		Scanner user5 = new Scanner(System.in);
+//		System.out.println("5) Crowds");
+//		double crowdI = user5.nextInt();
+		
 		//Average
 		for(int i = 0; i < SkiPreferenceSort.newMountains.size(); i++)
 			{

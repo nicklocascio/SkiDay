@@ -37,6 +37,7 @@ public class List extends JFrame
 		this.setSize(200, 200);
 		this.setLocationRelativeTo(null);
 		this.setVisible(true);
+
 		mountains.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		}
 	
@@ -57,8 +58,19 @@ public class List extends JFrame
 		
 		System.out.println(mountainChoice);
 		
-		String imageName = mountainChoice + ".jpg";
-//		ImageIcon image = new ImageIcon(imageName);
+		String imageName = mountainChoice.substring(1, mountainChoice.length()-1) + ".jpg";
+		System.out.println(imageName);
+		
+		ImageIcon image = new ImageIcon(imageName);
+		
+		JOptionPane.showMessageDialog(
+				null, 
+				mountainChoice.substring(1, mountainChoice.length()-1),
+				"Hey",
+				JOptionPane.CLOSED_OPTION,
+				image
+				);
+		
 		
 //		BufferedImage img = null;
 //		try {
