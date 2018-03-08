@@ -2,7 +2,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
 
+import javax.swing.JFrame;
+import javax.swing.JList;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 
 public class IdealDay
 	{
@@ -125,27 +129,61 @@ public class IdealDay
 			SkiPreferenceSort.newMountains.get(i).setAverage(average);
 			}
 		Collections.sort(SkiPreferenceSort.newMountains, new AverageSorter());
-		System.out.println("Here are the top mountains for you: ");
-		for(int i = 0; i < 3; i++)
-			{
-			System.out.println((i+1) + ") " + SkiPreferenceSort.newMountains.get(i).getName() + ": A lift ticket is $" + SkiPreferenceSort.newMountains.get(i).getPrice() + ". The mountain is " + SkiPreferenceSort.newMountains.get(i).getAcres() + " acres large. It is " + SkiPreferenceSort.newMountains.get(i).getMiles() + " miles away from " + ListFiller.city + ", which as approximately " + SkiPreferenceSort.newMountains.get(i).getTimeR() + ". It has been rated a " + SkiPreferenceSort.newMountains.get(i).getCrowd() + " on a scale from 1-10 (1 being the best, 10 being the worst) concerning the crowds.");
-			}
-		System.out.println();
-		Scanner userInput = new Scanner(System.in);
-		System.out.println("What would you like to do next?");
-		System.out.println("1) Return to the main menu");
-		System.out.println("2) Try the ideal mountain function again");
-		System.out.println("3) Exit");
-		int answer = userInput.nextInt();
-		if(answer == 1)
+//		System.out.println("Here are the top mountains for you: ");
+//		for(int i = 0; i < 3; i++)
+//			{
+//			System.out.println((i+1) + ") " + SkiPreferenceSort.newMountains.get(i).getName() + ": A lift ticket is $" + SkiPreferenceSort.newMountains.get(i).getPrice() + ". The mountain is " + SkiPreferenceSort.newMountains.get(i).getAcres() + " acres large. It is " + SkiPreferenceSort.newMountains.get(i).getMiles() + " miles away from " + ListFiller.city + ", which as approximately " + SkiPreferenceSort.newMountains.get(i).getTimeR() + ". It has been rated a " + SkiPreferenceSort.newMountains.get(i).getCrowd() + " on a scale from 1-10 (1 being the best, 10 being the worst) concerning the crowds.");
+//			}
+		
+		JFrame f = new JFrame("Hey");
+		f.add(new JList(ConvertToArray.convert(SkiPreferenceSort.newMountains, 5)));
+		f.setSize(500, 300);
+		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		f.setSize(1500, 300);
+		f.setLocationRelativeTo(null);
+		f.setVisible(true);
+		Runner.delay();
+		f.setVisible(false);
+		
+		
+//		JScrollPane scrPane = new JScrollPane(f);
+//
+//		scrPane.setVisible(true);
+//		Runner.delay();
+//		scrPane.setVisible(false);
+		
+//		JPanel container = new JPanel();
+//		container.add(f);
+//		JScrollPane jsp = new JScrollPane(container);
+//		f.add(jsp);
+		
+//		System.out.println();
+//		Scanner userInput = new Scanner(System.in);
+//		System.out.println("What would you like to do next?");
+//		System.out.println("1) Return to the main menu");
+//		System.out.println("2) Try the ideal mountain function again");
+//		System.out.println("3) Exit");
+//		int answer = userInput.nextInt();
+		Object[] options = {"Return to the Main Menu", "Try the Ideal Mountain function again", "Exit"};
+		int answer = JOptionPane.showOptionDialog(
+				null, 
+				"Would you like to see another sort?",
+				"Menu",
+				JOptionPane.DEFAULT_OPTION,
+				JOptionPane.QUESTION_MESSAGE,
+				null,
+				options,
+				options[0]
+				);
+		if(answer == 0)
 			{
 			Runner.mainMenu();
 			}
-		else if(answer == 2)
+		else if(answer == 1)
 			{
 			idealDay();
 			}
 		else
-			System.out.println();
+			Runner.farewell();
 		}
 	}

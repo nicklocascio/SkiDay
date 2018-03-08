@@ -108,7 +108,7 @@ public class IndividualLists
 					Runner.mainMenu();
 					}
 				else
-					System.out.println();
+					Runner.farewell();
 				}
 			}
 		}

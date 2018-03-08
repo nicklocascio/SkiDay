@@ -9,11 +9,7 @@ public class Runner
 		ListFiller.fillArray();
 		SkiPreferenceSort.skiingType();
 		mainMenu();
-		JLabel label = new JLabel("Farewell");
-		label.setText("Sounds good! Have fun out there and be safe!");
-		label.setVisible(true);
-		delay();
-		label.setVisible(false);
+		farewell();
 //		System.out.println("Sounds good! Have fun out there and be safe!");
 		}
 	
@@ -27,6 +23,15 @@ public class Runner
 			{
 			e.printStackTrace();
 			}
+		}
+	
+	public static void farewell()
+		{
+		JLabel label = new JLabel("Farewell");
+		label.setText("Sounds good! Have fun out there and be safe!");
+		label.setVisible(true);
+		delay();
+		label.setVisible(false);
 		}
 	
 	public static void mainMenu()
@@ -57,3 +62,4 @@ public class Runner
 			}
 		}
 	}
+	
